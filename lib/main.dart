@@ -17,36 +17,55 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AwesomeApp"),
       ),
-      body: Container(
-        height: 500,
-        color: Colors.teal,
-        child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(8),
-            width: 100,
-            height: 100,
-            color: Colors.yellow,
-            alignment: Alignment.center,
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            width: 100,
-            height: 100,
-            color: Colors.green,
-            alignment: Alignment.center,
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            width: 100,
-            height: 100,
-            color: Colors.red,
-            alignment: Alignment.center,
-          ),
-        ]),
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.teal,  
+        ),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Jonathas"), 
+              accountEmail: Text("jonathas.fps@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage("https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80")
+              ),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+
+              title: Text("Jonathas Germano"),
+              subtitle: Text("IT Analyst"),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
+              
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+
+              title: Text("Ilehana Paola"),
+              subtitle: Text("German Translator"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+
+              title: Text("José Pereira"),
+              subtitle: Text("Life Coach"),
+              trailing: Icon(Icons.edit),
+            ),
+          ]
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+        ),
     );
   }
 }
